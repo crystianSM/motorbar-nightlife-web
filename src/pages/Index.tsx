@@ -8,6 +8,9 @@ import EventsSection from '../components/EventsSection';
 import MenuHighlights from '../components/MenuHighlights';
 import ContactSection from '../components/ContactSection';
 import Footer from '../components/Footer';
+import TestimonialsSection from '../components/TestimonialsSection';
+import BenefitsSection from '../components/BenefitsSection';
+import WhatsAppButton from '../components/WhatsAppButton';
 
 const Index = () => {
   return (
@@ -15,11 +18,14 @@ const Index = () => {
       <Navbar />
       <HeroSection />
       <AboutSection />
+      <BenefitsSection />
       <FeaturesSection />
       <MenuHighlights />
+      <TestimonialsSection />
       <EventsSection />
       <ContactSection />
       <Footer />
+      <WhatsAppButton />
     </div>
   );
 };
