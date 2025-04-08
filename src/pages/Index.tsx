@@ -24,7 +24,7 @@ const Index = () => {
         <AboutSection />
         <BenefitsSection />
         <FeaturesSection />
-        <MenuHighlights />
+     
         <InstagramFeed />
         <TestimonialsSection />
         <EventsSection />

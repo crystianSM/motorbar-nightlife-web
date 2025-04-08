@@ -9,8 +9,11 @@ const Footer: React.FC = () => {
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="mb-6 md:mb-0">
-            <h3 className="text-2xl font-bold">
-              RIGON<span className="text-gold">MOTOR</span>BAR
+            <h3 className="text-2xl font-bold tracking-tighter">
+              RIGON <span className="text-[#F45F0A] relative inline-block">
+                MOTOR
+                <span className="absolute inset-0 bg-[#F45F0A]/20 blur-sm -z-10"></span>
+              </span> BAR
             </h3>
             <p className="text-gray-400 mt-2">Uma experiência única sobre rodas!</p>
           </div>
@@ -20,9 +23,10 @@ const Footer: React.FC = () => {
               <a 
                 key={item} 
                 href={`#${item.toLowerCase()}`}
-                className="text-gray-400 hover:text-gold transition-colors"
+                className="text-white hover:text-[#F45F0A] transition-colors relative group"
               >
                 {item}
+                <span className="absolute left-0 right-0 bottom-0 h-0.5 bg-[#F45F0A] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
               </a>
             ))}
           </div>

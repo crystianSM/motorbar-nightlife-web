@@ -1,4 +1,3 @@
-
 import React from 'react';
 
 type MenuItemProps = {
@@ -12,7 +11,7 @@ const MenuItem: React.FC<MenuItemProps> = ({ name, description, price, category 
   <div className="border-b border-zinc-800 py-4 last:border-b-0">
     <div className="flex justify-between items-baseline">
       <h4 className="text-lg font-semibold">{name}</h4>
-      <span className="text-gold font-medium">{price}</span>
+      <span className="text-[#F45F0A] font-medium">{price}</span>
     </div>
     <p className="text-gray-400 text-sm mt-1">{description}</p>
   </div>
@@ -47,16 +46,19 @@ const MenuHighlights: React.FC = () => {
   ];
 
   return (
-    <section className="bg-zinc-900 section-padding" id="cardapio">
-      <div className="container mx-auto">
-        <h2 className="section-title text-white">
-          Destaques do Cardápio
-          <div className="golden-accent"></div>
-        </h2>
+    <section className="bg-zinc-900 py-16 md:py-24" id="cardapio">
+      <div className="container mx-auto px-4">
+        <div className="flex flex-col items-center mb-12">
+          <span className="text-[#F45F0A] font-semibold mb-2">SABORES EXCLUSIVOS</span>
+          <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center text-white">
+            Destaques do Cardápio
+          </h2>
+          <div className="h-1 w-40 bg-[#F45F0A] mx-auto"></div>
+        </div>
         
         <div className="grid md:grid-cols-2 gap-12">
           <div>
-            <div className="h-full rounded-lg overflow-hidden bg-black/30 backdrop-blur-sm p-8">
+            <div className="h-full rounded-lg overflow-hidden bg-black/30 backdrop-blur-sm p-8 border border-zinc-800 hover:border-[#F45F0A]/30 transition-all duration-300">
               {menuItems.slice(0, 2).map((item, index) => (
                 <MenuItem
                   key={index}
@@ -69,7 +71,7 @@ const MenuHighlights: React.FC = () => {
             </div>
           </div>
           <div>
-            <div className="h-full rounded-lg overflow-hidden bg-black/30 backdrop-blur-sm p-8">
+            <div className="h-full rounded-lg overflow-hidden bg-black/30 backdrop-blur-sm p-8 border border-zinc-800 hover:border-[#F45F0A]/30 transition-all duration-300">
               {menuItems.slice(2, 4).map((item, index) => (
                 <MenuItem
                   key={index}
@@ -84,7 +86,7 @@ const MenuHighlights: React.FC = () => {
         </div>
         
         <div className="text-center mt-12">
-          <a href="/cardapio" className="btn-primary">Ver cardápio completo</a>
+          <a href="/cardapio" className="inline-block px-8 py-3 bg-[#F45F0A] hover:bg-[#d54d02] text-white font-bold rounded-md transition-all duration-300 hover:scale-105">Ver cardápio completo</a>
         </div>
       </div>
     </section>

@@ -8,11 +8,11 @@ type Event = {
 };
 
 const EventCard: React.FC<Event> = ({ date, title, description }) => (
-  <div className="border border-zinc-800 p-6 hover:border-gold/50 transition-colors">
-    <div className="text-gold mb-2 font-medium">{date}</div>
+  <div className="border border-zinc-800 p-6 hover:border-[#F45F0A]/50 transition-colors">
+    <div className="text-[#F45F0A] mb-2 font-medium">{date}</div>
     <h3 className="text-xl font-bold mb-2">{title}</h3>
     <p className="text-gray-400 mb-4">{description}</p>
-    <button className="uppercase text-gold hover:text-white transition-colors font-medium flex items-center">
+    <button className="uppercase text-[#F45F0A] hover:text-white transition-colors font-medium flex items-center">
       Saiba mais 
       <span className="ml-2">→</span>
     </button>
@@ -44,12 +44,15 @@ const EventsSection: React.FC = () => {
   ];
 
   return (
-    <section className="bg-black text-white section-padding" id="eventos">
-      <div className="container mx-auto">
-        <h2 className="section-title">
-          Próximos Eventos
-          <div className="golden-accent"></div>
-        </h2>
+    <section className="bg-black text-white py-16 md:py-24" id="eventos">
+      <div className="container mx-auto px-4">
+        <div className="flex flex-col items-center mb-12">
+          <span className="text-[#F45F0A] font-semibold mb-2">AGENDA</span>
+          <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center">
+            Próximos Eventos
+          </h2>
+          <div className="h-1 w-40 bg-[#F45F0A] mx-auto"></div>
+        </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {events.map((event, index) => (
@@ -63,7 +66,9 @@ const EventsSection: React.FC = () => {
         </div>
         
         <div className="text-center mt-12">
-          <a href="#" className="btn-primary">Ver todos os eventos</a>
+          <a href="#" className="inline-block px-8 py-3 bg-[#F45F0A] hover:bg-[#d54d02] text-white font-bold rounded-md transition-all duration-300 hover:scale-105">
+            Ver todos os eventos
+          </a>
         </div>
       </div>
     </section>
