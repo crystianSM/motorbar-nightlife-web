@@ -137,7 +137,7 @@ const MenuPage: React.FC = () => {
           </motion.h1>
           
           <motion.div 
-            className="h-1 w-20 bg-gold mx-auto mb-12"
+            className="h-1 w-20 bg-[#F45F0A] mx-auto mb-12"
             initial={{ width: 0 }}
             animate={{ width: 80 }}
             transition={{ duration: 0.8, delay: 0.3 }}
@@ -155,7 +155,7 @@ const MenuPage: React.FC = () => {
                 variants={itemVariants}
                 className="bg-zinc-900/50 backdrop-blur-sm p-8 rounded-lg"
               >
-                <h2 className="text-3xl font-bold mb-8 text-gold flex items-center">
+                <h2 className="text-3xl font-bold mb-8 text-[#F45F0A] flex items-center">
                   {category.title}
                 </h2>
                 
@@ -167,10 +167,10 @@ const MenuPage: React.FC = () => {
                       whileHover={{ scale: 1.01 }}
                     >
                       <div className="flex justify-between items-baseline">
-                        <h3 className="text-xl font-medium group-hover:text-gold transition-colors duration-300">
+                        <h3 className="text-xl font-medium group-hover:text-[#F45F0A] transition-colors duration-300">
                           {item.name}
                         </h3>
-                        <div className="ml-4 text-lg font-medium text-gold flex-shrink-0">
+                        <div className="ml-4 text-lg font-medium text-[#F45F0A] flex-shrink-0">
                           {item.price}
                         </div>
                       </div>

@@ -178,7 +178,7 @@ const AboutSection: React.FC = () => {
             <div className="relative rounded-xl overflow-hidden shadow-2xl aspect-[4/3]">
               <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent opacity-60 z-10 transition-opacity duration-300 group-hover:opacity-30"></div>
               <motion.img 
-                src="https://images.unsplash.com/photo-1600456899121-68eda5705257?q=80&w=1974&auto=format&fit=crop"
+                src="/assets/imagens/car2.jpeg"
                 alt="Rigon Bar ambiente" 
                 className="w-full h-full object-cover"
                 whileHover={{ scale: 1.1 }}
@@ -190,7 +190,7 @@ const AboutSection: React.FC = () => {
                   animate={{ rotate: [-2, 1, -2] }}
                   transition={{ duration: 4, repeat: Infinity }}
                 >
-                  <span className="font-bold text-black text-xl">Desde 2022</span>
+                  <span className="font-bold text-black text-xl">Desde 2010</span>
                 </motion.div>
               </div>
             </div>

@@ -38,7 +38,7 @@ const HeroSection: React.FC = () => {
       className="min-h-[100vh] bg-cover bg-center bg-no-repeat flex items-center justify-center relative bg-fixed overflow-hidden w-full" 
       id="home"
       style={{ 
-        backgroundImage: "linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1566417713940-fe7c737a9ef2?q=80&w=3840&auto=format&fit=crop&h=1000')",
+        backgroundImage: "linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('./assets/imagens/car6.jpg')",
         backgroundSize: `${120 + parallaxValue * 0.1}% auto`,
         backgroundPosition: `center ${40 + parallaxValue * 0.05}%`
       }}
@@ -142,7 +142,7 @@ const HeroSection: React.FC = () => {
         
         {/* Enhanced buttons */}
         <motion.div 
-          className="flex flex-col sm:flex-row items-center justify-center gap-8"
+          className="flex flex-col sm:flex-row items-center justify-center gap-8 pt-10"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: isLoaded ? 1 : 0, y: isLoaded ? 0 : 30 }}
           transition={{ duration: 0.8, delay: 1.2 }}

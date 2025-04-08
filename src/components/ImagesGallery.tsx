@@ -7,32 +7,32 @@ import { ArrowRight } from 'lucide-react';
 const ImagesGallery: React.FC = () => {
   const galleryImages = [
     {
-      url: "https://images.unsplash.com/photo-1572116469696-31de0f17cc34?q=80&w=2074&auto=format&fit=crop",
+      url: "/assets/imagens/unnamed7.jpg",
       title: "Nossas Bebidas",
       description: "Drinks exclusivos preparados com ingredientes selecionados"
     },
     {
-      url: "https://images.unsplash.com/photo-1483086431886-3590a88317fe?q=80&w=2070&auto=format&fit=crop",
+      url: "/assets/imagens/unnamed2.jpg",
       title: "Eventos Musicais",
       description: "Música ao vivo com os melhores artistas locais"
     },
     {
-      url: "https://images.unsplash.com/photo-1606218174049-484e91b5dc4f?q=80&w=2071&auto=format&fit=crop",
+      url: "/assets/imagens/unnamed1.jpg",
       title: "Gastronomia Premium",
       description: "Pratos preparados com ingredientes de alta qualidade"
     },
     {
-      url: "https://images.unsplash.com/photo-1508766917616-d22f3f1eea14?q=80&w=2070&auto=format&fit=crop",
+      url: "/assets/imagens/unnamed5.jpg",
       title: "Encontro de Motociclistas",
       description: "O point preferido dos amantes de motos"
     },
     {
-      url: "https://images.unsplash.com/photo-1613600088545-5fa13611bcee?q=80&w=2070&auto=format&fit=crop",
+      url: "/assets/imagens/unnamed4.jpg",
       title: "Momentos Especiais",
       description: "Crie memórias inesquecíveis com seus amigos"
     },
     {
-      url: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=2070&auto=format&fit=crop",
+      url: "/assets/imagens/unnamed6.jpg",
       title: "Ambiente Acolhedor",
       description: "Um espaço projetado para seu conforto"
     },

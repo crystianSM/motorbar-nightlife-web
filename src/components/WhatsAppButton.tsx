@@ -43,7 +43,7 @@ const WhatsAppButton: React.FC = () => {
       {showTooltip && (
         <div className="absolute top-[-5rem] right-0 bg-white p-3 rounded-lg shadow-lg text-sm w-48 animate-fade-in">
           <div className="absolute bottom-[-8px] right-6 w-4 h-4 bg-white transform rotate-45"></div>
-          <p className="text-gray-700">Precisa de ajuda? Fale conosco!</p>
+          <p className="text-gray-700">Fale conosco!</p>
         </div>
       )}
     </div>
