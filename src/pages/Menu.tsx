@@ -2,6 +2,8 @@
 import React from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import { motion } from 'framer-motion';
+import { Separator } from '@/components/ui/separator';
 
 type MenuCategory = {
   title: string;
@@ -96,40 +98,96 @@ const MenuPage: React.FC = () => {
     }
   ];
 
+  // Animation variants
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.15,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { y: 20, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        type: "spring",
+        stiffness: 100,
+      },
+    },
+  };
+
   return (
     <div className="min-h-screen bg-black text-white">
       <Navbar />
       
       <div className="pt-24 pb-16 px-4">
-        <div className="container mx-auto">
-          <h1 className="text-5xl font-bold text-center mb-4">Cardápio</h1>
-          <div className="golden-accent"></div>
-          <p className="text-center text-gray-400 max-w-xl mx-auto mb-16">
-            Conheça nossos pratos e bebidas especialmente selecionados para os amantes de motos, boa gastronomia e momentos únicos.
-          </p>
+        <div className="container mx-auto max-w-4xl">
+          <motion.h1 
+            className="text-5xl font-bold text-center mb-2"
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+          >
+            Cardápio
+          </motion.h1>
           
-          <div className="space-y-16">
+          <motion.div 
+            className="h-1 w-20 bg-gold mx-auto mb-12"
+            initial={{ width: 0 }}
+            animate={{ width: 80 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+          />
+          
+          <motion.div 
+            className="space-y-20"
+            variants={containerVariants}
+            initial="hidden"
+            animate="visible"
+          >
             {menuCategories.map((category, index) => (
-              <div key={index}>
-                <h2 className="text-3xl font-bold mb-6 flex items-center">
-                  <span className="bg-gold h-8 w-1 mr-4"></span>
+              <motion.section 
+                key={index}
+                variants={itemVariants}
+                className="bg-zinc-900/50 backdrop-blur-sm p-8 rounded-lg"
+              >
+                <h2 className="text-3xl font-bold mb-8 text-gold flex items-center">
                   {category.title}
                 </h2>
                 
-                <div className="grid md:grid-cols-2 gap-8">
+                <div className="space-y-6">
                   {category.items.map((item, itemIndex) => (
-                    <div key={itemIndex} className="border-b border-zinc-800 pb-6">
-                      <div className="flex justify-between mb-2">
-                        <h3 className="text-xl font-semibold">{item.name}</h3>
-                        <span className="text-gold font-medium">{item.price}</span>
+                    <motion.div 
+                      key={itemIndex}
+                      className="group"
+                      whileHover={{ scale: 1.01 }}
+                    >
+                      <div className="flex justify-between items-baseline">
+                        <h3 className="text-xl font-medium group-hover:text-gold transition-colors duration-300">
+                          {item.name}
+                        </h3>
+                        <div className="ml-4 text-lg font-medium text-gold flex-shrink-0">
+                          {item.price}
+                        </div>
                       </div>
-                      <p className="text-gray-400">{item.description}</p>
-                    </div>
+                      
+                      <p className="text-zinc-400 text-sm mt-1">
+                        {item.description}
+                      </p>
+                      
+                      {itemIndex < category.items.length - 1 && (
+                        <Separator className="mt-5 bg-zinc-800" />
+                      )}
+                    </motion.div>
                   ))}
                 </div>
-              </div>
+              </motion.section>
             ))}
-          </div>
+          </motion.div>
         </div>
       </div>
       
