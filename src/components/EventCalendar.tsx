@@ -125,13 +125,14 @@ const EventCalendar: React.FC = () => {
                   }
                 }}
                 components={{
-                  DayContent: (props) => {
-                    const date = new Date(props.date);
-                    const hasEventOnDay = hasEvent(date);
+                  DayContent: ({ date }) => {
+                    const currentDate = new Date(date);
+                    const hasEventOnDay = hasEvent(currentDate);
+                    const dayNumber = currentDate.getDate();
                     
                     return (
                       <div className="relative w-full h-full flex items-center justify-center">
-                        {props.day}
+                        {dayNumber}
                         {hasEventOnDay && (
                           <div className="absolute bottom-1 w-1 h-1 bg-[#F45F0A] rounded-full"></div>
                         )}

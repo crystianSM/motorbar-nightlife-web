@@ -56,6 +56,11 @@ export default {
 				gold: {
 					DEFAULT: '#D4AF37',
 					light: '#F8E9A1'
+				},
+				orange: {
+					DEFAULT: '#F45F0A',
+					light: '#FF8C4D',
+					dark: '#D54D02'
 				}
 			},
 			fontFamily: {
@@ -92,16 +97,48 @@ export default {
 				'slide-up': {
 					'0%': { transform: 'translateY(20px)', opacity: '0' },
 					'100%': { transform: 'translateY(0)', opacity: '1' }
+				},
+				'slide-in-right': {
+					'0%': { transform: 'translateX(100%)', opacity: '0' },
+					'100%': { transform: 'translateX(0)', opacity: '1' }
+				},
+				'slide-in-left': {
+					'0%': { transform: 'translateX(-100%)', opacity: '0' },
+					'100%': { transform: 'translateX(0)', opacity: '1' }
+				},
+				'scale-in': {
+					'0%': { transform: 'scale(0.95)', opacity: '0' },
+					'100%': { transform: 'scale(1)', opacity: '1' }
+				},
+				'float': {
+					'0%, 100%': { transform: 'translateY(0)' },
+					'50%': { transform: 'translateY(-10px)' }
+				},
+				'pulse-soft': {
+					'0%, 100%': { opacity: '1' },
+					'50%': { opacity: '0.7' }
+				},
+				'glow': {
+					'0%, 100%': { boxShadow: '0 0 15px rgba(244, 95, 10, 0.5)' },
+					'50%': { boxShadow: '0 0 30px rgba(244, 95, 10, 0.8)' }
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out',
 				'fade-in': 'fade-in 0.5s ease-out',
-				'slide-up': 'slide-up 0.7s ease-out'
+				'slide-up': 'slide-up 0.7s ease-out',
+				'slide-in-right': 'slide-in-right 0.7s ease-out',
+				'slide-in-left': 'slide-in-left 0.7s ease-out',
+				'scale-in': 'scale-in 0.5s ease-out',
+				'float': 'float 6s ease-in-out infinite',
+				'pulse-soft': 'pulse-soft 3s ease-in-out infinite',
+				'glow': 'glow 2s ease-in-out infinite'
 			},
 			backgroundImage: {
-				'hero-pattern': "linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/lovable-uploads/1ff1e660-6c3d-45b3-8422-7e86ab956a67.png')"
+				'hero-pattern': "linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/lovable-uploads/1ff1e660-6c3d-45b3-8422-7e86ab956a67.png')",
+				'features-pattern': "linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('https://images.unsplash.com/photo-1519750157634-b6d493a0f77c?q=80&w=2674&auto=format&fit=crop')",
+				'contact-pattern': "linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)), url('https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?q=80&w=2670&auto=format&fit=crop')"
 			}
 		}
 	},
