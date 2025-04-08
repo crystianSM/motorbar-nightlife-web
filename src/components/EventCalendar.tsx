@@ -131,7 +131,7 @@ const EventCalendar: React.FC = () => {
                     
                     return (
                       <div className="relative w-full h-full flex items-center justify-center">
-                        {props.children}
+                        {props.day}
                         {hasEventOnDay && (
                           <div className="absolute bottom-1 w-1 h-1 bg-[#F45F0A] rounded-full"></div>
                         )}
