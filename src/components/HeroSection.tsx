@@ -38,45 +38,80 @@ const HeroSection: React.FC = () => {
       className="min-h-[100vh] bg-cover bg-center bg-no-repeat flex items-center justify-center relative bg-fixed overflow-hidden w-full" 
       id="home"
       style={{ 
-        backgroundImage: "linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('./assets/imagens/car6.jpg')",
-        backgroundSize: `${120 + parallaxValue * 0.1}% auto`,
-        backgroundPosition: `center ${40 + parallaxValue * 0.05}%`
+        backgroundImage: "url('./assets/imagens/car6.jpg')",
+        backgroundSize: `${160 + parallaxValue * 0.1}% auto`,
+        backgroundPosition: `center ${4 + parallaxValue * 0.1}%`
       }}
     >
+     
+           
+          {/* Party Light Rays Effect */}
+          <div className="absolute top-0 left-0 w-full h-full z-[5] pointer-events-none overflow-hidden">
+        {/* Center spotlight base */}
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[70vh] overflow-hidden">
+          <motion.div 
+            className="absolute top-0 w-full h-full bg-gradient-to-b from-white/15 via-white/5 to-transparent blur-[80px]"
+            animate={{ opacity: [0.6, 0.8, 0.6] }}
+            transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+          />
+        </div>
+        
+        {/* Left light ray */}
+        <motion.div 
+          className="absolute top-0 left-[30%] h-[90vh] w-[80px] origin-top rotate-[-15deg] bg-gradient-to-b from-white/30 via-white/10 to-transparent blur-[15px]"
+          animate={{ 
+            opacity: [0.7, 0.2, 0.7],
+            rotate: ["-15deg", "-18deg", "-15deg"]
+          }}
+          transition={{ 
+            opacity: { duration: 3, repeat: Infinity, repeatType: "reverse" },
+            rotate: { duration: 8, repeat: Infinity, repeatType: "reverse" }
+          }}
+        />
+        
+        {/* Right light ray */}
+        <motion.div 
+          className="absolute top-0 right-[30%] h-[80vh] w-[60px] origin-top rotate-[12deg] bg-gradient-to-b from-white/25 via-white/8 to-transparent blur-[12px]"
+          animate={{ 
+            opacity: [0.2, 0.6, 0.2],
+            rotate: ["12deg", "15deg", "12deg"]
+          }}
+          transition={{ 
+            opacity: { duration: 4, repeat: Infinity, repeatType: "reverse" },
+            rotate: { duration: 7, repeat: Infinity, repeatType: "reverse" }
+          }}
+        />
+        
+        {/* Center light ray */}
+        <motion.div 
+          className="absolute top-0 left-1/2 -translate-x-1/2 h-[95vh] w-[100px] origin-top bg-gradient-to-b from-white/40 via-white/15 to-transparent blur-[20px]"
+          animate={{ 
+            opacity: [0.8, 0.3, 0.1],
+            width: ["100px", "120px", "100px"]
+          }}
+          transition={{ 
+            opacity: { duration: 5, repeat: Infinity, repeatType: "reverse" },
+            width: { duration: 6, repeat: Infinity, repeatType: "reverse" }
+          }}
+        />
+        
+        {/* Additional angled rays */}
+        <motion.div 
+          className="absolute top-0 left-[15%] h-[70vh] w-[40px] origin-top rotate-[-25deg] bg-gradient-to-b from-white/20 via-white/5 to-transparent blur-[10px]"
+          animate={{ opacity: [0.5, 0.1, 0.1] }}
+          transition={{ duration: 3.5, repeat: Infinity, repeatType: "reverse" }}
+        />
+        
+        <motion.div 
+          className="absolute top-0 right-[15%] h-[75vh] w-[50px] origin-top rotate-[22deg] bg-gradient-to-b from-white/20 via-white/5 to-transparent blur-[10px]"
+          animate={{ opacity: [0.5, 0.1, 0.1] }}
+          transition={{ duration: 4.5, repeat: Infinity, repeatType: "reverse" }}
+        />
+      </div>
+
       {/* Enhanced overlay with multiple gradients */}
       <div className="absolute inset-0 bg-gradient-to-b from-black/90 via-black/50 to-black/90"></div>
       <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-transparent to-black/60"></div>
-      
-      {/* Enhanced animated particles/lights effect */}
-      <div className="absolute inset-0 overflow-hidden">
-        <motion.div 
-          animate={{ 
-            opacity: [0.1, 0.15, 0.1],
-            scale: [1, 1.1, 1],
-          }}
-          transition={{ 
-            duration: 5, 
-            repeat: Infinity,
-            repeatType: "reverse" 
-          }}
-          className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full bg-[#F45F0A]/10 blur-[100px]"
-        ></motion.div>
-        <motion.div 
-          animate={{ 
-            opacity: [0.05, 0.1, 0.05],
-            scale: [1, 1.15, 1],
-          }}
-          transition={{ 
-            duration: 7, 
-            repeat: Infinity,
-            repeatType: "reverse",
-            delay: 1
-          }}
-          className="absolute bottom-1/3 right-1/3 w-[500px] h-[500px] rounded-full bg-[#F45F0A]/5 blur-[120px]"
-        ></motion.div>
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-black/20 blur-[100px]"></div>
-      </div>
-      
       {/* Content container */}
       <div className="container mx-auto px-4 text-center text-white relative z-10 flex flex-col justify-between h-full py-24">
         {/* Enhanced top badge */}
@@ -198,3 +233,32 @@ const HeroSection: React.FC = () => {
 };
 
 export default HeroSection;
+
+{/* Elegant Top-Down Light Effect */}
+      <div className="absolute top-0 left-0 w-full flex justify-center z-[5] pointer-events-none">
+        <div className="relative h-[100vh] w-[100vw] overflow-hidden [clip-path:ellipse(600px_60vh_at_50%_0%)] after:absolute after:inset-0 after:bg-gradient-to-b after:from-transparent after:via-black/40 after:to-black/90 after:blur-[80px]">
+          <motion.div 
+            className="absolute top-0 w-full h-full bg-gradient-to-b from-white/20 via-white/10 to-transparent blur-[120px]"
+            animate={{
+              opacity: [0.7, 0.9, 0.7],
+              translateY: ["0%", "5%", "0%"]
+            }}
+            transition={{
+              duration: 8,
+              repeat: Infinity,
+              ease: "easeInOut"
+            }}
+          />
+          <motion.div 
+            className="absolute top-0 w-full h-full bg-[linear-gradient(to_bottom,_rgba(255,255,255,0.3)_0%,_transparent_60%)] blur-[80px]"
+            animate={{
+              opacity: [0.4, 0.6, 0.4]
+            }}
+            transition={{
+              duration: 5,
+              repeat: Infinity,
+              ease: "easeInOut"
+            }}
+          />
+        </div>
+      </div>

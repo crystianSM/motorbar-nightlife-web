@@ -76,11 +76,11 @@ const Navbar = () => {
     <nav 
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         isScrolled 
-          ? 'bg-black/95 backdrop-blur-md shadow-lg py-3' 
+          ? 'bg-black/95 backdrop-blur-md shadow-lg py-3 after:absolute after:inset-0 after:bg-gradient-to-b after:from-white/10 after:via-white/20 after:to-transparent after:blur-3xl after:-z-10' 
           : 'bg-gradient-to-b from-black/80 via-black/50 to-transparent py-6'
       }`}
     >
-      <div className="container mx-auto px-6 flex justify-between items-center">
+      <div className="container mx-auto px-6 flex justify-between items-center relative z-10">
         <Link 
           to="/"
           className="flex items-center text-white font-display text-2xl font-bold hover:text-[#F45F0A] transition-colors duration-300"

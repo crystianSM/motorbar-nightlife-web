@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { CheckCircle } from 'lucide-react';
@@ -30,31 +29,48 @@ const AboutSection: React.FC = () => {
 
   return (
     <section className="relative bg-gradient-to-b from-black via-black to-black/95 text-white py-24 md:py-32 overflow-hidden" id="sobre">
-      {/* Enhanced Background Effects */}
+      {/* Existing Background Effects */}
       <div className="absolute inset-0 opacity-10">
         <motion.div 
-          className="absolute top-1/4 left-1/4 w-[600px] h-[600px] rounded-full bg-[#F45F0A]/10 blur-[120px]"
+          className="absolute top-0 left-1/4 w-[800px] h-[800px] rounded-full bg-gradient-to-r from-[#F45F0A]/20 to-[#d54d02]/20 blur-[150px]"
           animate={{ 
-            scale: [1, 1.2, 1],
-            opacity: [0.1, 0.15, 0.1] 
+            scale: [1, 1.3, 1],
+            opacity: [0.2, 0.3, 0.2],
+            rotate: [0, 45, 0]
           }}
           transition={{ 
-            duration: 8,
+            duration: 12,
             repeat: Infinity,
-            repeatType: "reverse" 
+            repeatType: "reverse",
+            ease: "easeInOut"
           }}
         ></motion.div>
         <motion.div 
-          className="absolute bottom-1/3 right-1/3 w-[700px] h-[700px] rounded-full bg-[#F45F0A]/5 blur-[150px]"
+          className="absolute -top-20 left-1/3 w-[700px] h-[700px] rounded-full bg-gradient-to-br from-[#F45F0A]/15 via-[#d54d02]/10 to-transparent blur-[130px]"
           animate={{ 
-            scale: [1, 1.1, 1],
-            opacity: [0.05, 0.1, 0.05] 
+            scale: [1, 1.2, 1],
+            opacity: [0.15, 0.25, 0.15],
+            x: [-20, 20, -20]
           }}
           transition={{ 
-            duration: 10,
+            duration: 15,
             repeat: Infinity,
             repeatType: "reverse",
-            delay: 1
+            ease: "easeInOut"
+          }}
+        ></motion.div>
+        <motion.div 
+          className="absolute bottom-1/3 right-1/3 w-[900px] h-[900px] rounded-full bg-gradient-to-tl from-[#F45F0A]/10 via-[#d54d02]/5 to-transparent blur-[170px]"
+          animate={{ 
+            scale: [1, 1.15, 1],
+            opacity: [0.1, 0.2, 0.1],
+            y: [-30, 30, -30]
+          }}
+          transition={{ 
+            duration: 18,
+            repeat: Infinity,
+            repeatType: "reverse",
+            ease: "easeInOut"
           }}
         ></motion.div>
       </div>
@@ -184,70 +200,69 @@ const AboutSection: React.FC = () => {
                   viewport={{ once: false, margin: "-100px" }}
                   onViewportEnter={() => {
                     const video = document.getElementById('aboutVideo') as HTMLVideoElement;
-                    video.play().catch(() => {
-                      // Handle autoplay error if needed
-                    });
-                    video.muted = false;
+                    if (video) {
+                      video.currentTime = 0;
+                      video.muted = false;
+                      video.play().catch(error => {
+                        console.log("Autoplay failed:", error);
+                        // Se o autoplay falhar, tenta novamente com muted
+                        video.muted = true;
+                        video.play().then(() => {
+                          // Depois de começar a tocar, tenta desmutar
+                          video.muted = false;
+                        });
+                      });
+                    }
                   }}
                   onViewportLeave={() => {
                     const video = document.getElementById('aboutVideo') as HTMLVideoElement;
-                    video.pause();
+                    if (video) {
+                      video.pause();
+                      video.currentTime = 0;
+                    }
                   }}
                   className="w-full h-full"
                 >
                   <video
-                    loop
                     playsInline
-                    muted
+                    loop
+                    autoPlay
+                    muted={false}
                     className="w-full h-full object-cover"
                     id="aboutVideo"
                   >
                     <source src="/assets/imagens/sobre.mp4" type="video/mp4" />
                   </video>
                 </motion.div>
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div 
-                    className="flex gap-4 opacity-0 transition-opacity duration-300 ease-in-out"
-                    style={{ opacity: "var(--button-opacity, 0)" }}
-                  >
-                    <button
-                      onClick={() => {
-                        const video = document.getElementById('aboutVideo') as HTMLVideoElement;
-                        if (video.paused) {
-                          video.play();
-                        } else {
-                          video.pause();
-                        }
-                      }}
-                      className="bg-black/50 hover:bg-[#F45F0A]/80 p-4 rounded-full transition-all duration-300 backdrop-blur-sm hover:scale-110"
-                    >
-                      {/* Play button SVG */}
-                    </button>
-                    <button
-                      onClick={() => {
-                        const video = document.getElementById('aboutVideo') as HTMLVideoElement;
-                        video.muted = !video.muted;
-                      }}
-                      className="bg-black/50 hover:bg-[#F45F0A]/80 p-4 rounded-full transition-all duration-300 backdrop-blur-sm hover:scale-110"
-                    >
-                      {/* Mute button SVG */}
-                    </button>
+                
+                {/* Enhanced video controls - visible on hover */}
+                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="flex gap-6">
+                    
+                    
+                   
                   </div>
                 </div>
-                <style>{`
-                  .group\/video:hover div {
-                    --button-opacity: 1;
-                  }
-                `}</style>
-                {/* Removed motion.img component */}
+                
+                {/* Removed style tag as we're making controls always visible */}
+                
               </div>
-              <div className="absolute bottom-8 left-8 z-30">
+              <div className="absolute bottom-3 left-1 z-30">
                 <motion.div 
-                  className="bg-[#F45F0A] py-3 px-8 rounded-lg shadow-xl"
-                  animate={{ rotate: [-2, 1, -2] }}
-                  transition={{ duration: 4, repeat: Infinity }}
+                  className="bg-gradient-to-r from-[#F45F0A]/90 to-[#d54d02]/90 backdrop-blur-sm py-3 px-8 rounded-xl border border-white/10 shadow-[0_8px_32px_rgba(244,95,10,0.3)]"
+                  animate={{ 
+                    rotate: [-1, 1, -1],
+                    y: [-2, 2, -2]
+                  }}
+                  transition={{ 
+                    duration: 4, 
+                    repeat: Infinity,
+                    ease: "easeInOut"
+                  }}
                 >
-                  <span className="font-bold text-black text-xl">Desde 2010</span>
+                  <span className="font-bold text-white text-xl tracking-wide">
+                    Desde 2016
+                  </span>
                 </motion.div>
               </div>
             </div>
