@@ -58,32 +58,32 @@ const EventCard: React.FC<Event> = ({ date, title, description, image, time }) =
 const EventsSection: React.FC = () => {
   const events: Event[] = [
     {
-      date: "Nossas Bebidas",
-      title: "Drinks exclusivos",
-      description: "Drinks exclusivos preparados com ingredientes selecionados",
+      date: "Toda Sexta e Sábado",
+      title: "Happy Hour com Drinks Especiais",
+      description: "Double drinks e promoções especiais em coquetéis selecionados até 21h",
       image: "/assets/imagens/unnamed7.jpg",
-      time: "19:00 - 00:00"
+      time: "Sexta e Sábado"
     },
     {
-      date: "Eventos Musicais",
-      title: "Música ao vivo",
-      description: "Música ao vivo com os melhores artistas locais",
+      date: "Sextas Musicais",
+      title: "Noite do Rock ao Vivo",
+      description: "As melhores bandas de rock da região com repertório especial",
       image: "/assets/imagens/unnamed2.jpg",
-      time: "20:00 - 01:00"
+      time: "Sexta e Sábado"
     },
     {
-      date: "Gastronomia Premium",
-      title: "Alta Gastronomia",
-      description: "Pratos preparados com ingredientes de alta qualidade",
+      date: "Sábados Gastronômicos",
+      title: "Festival de Petiscos",
+      description: "Cardápio especial com combos de petiscos e cervejas artesanais",
       image: "/assets/imagens/unnamed1.jpg",
-      time: "21:00 - 03:00"
+      time: "Sexta e Sábado"
     },
     {
-      date: "Encontro de Motociclistas",
-      title: "Point dos Motociclistas",
-      description: "O point preferido dos amantes de motos",
+      date: "Todo Sábado",
+      title: "Encontro de Motociclistas",
+      description: "Encontro tradicional com descontos especiais para motociclistas",
       image: "/assets/imagens/unnamed5.jpg",
-      time: "16:00 - 23:00"
+      time: "Sexta e Sábado"
     }
   ];
 
