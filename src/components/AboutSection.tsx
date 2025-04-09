@@ -261,7 +261,7 @@ const AboutSection: React.FC = () => {
                   }}
                 >
                   <span className="font-bold text-white text-xl tracking-wide">
-                    Desde 2016
+                    Desde 206
                   </span>
                 </motion.div>
               </div>
