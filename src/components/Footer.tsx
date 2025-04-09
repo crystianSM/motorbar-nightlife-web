@@ -58,7 +58,8 @@ const Footer: React.FC = () => {
             viewport={{ once: true }}
             className="space-y-4"
           >
-            <h3 className="text-2xl font-bold tracking-tighter inline-flex flex-wrap">
+            <h3 className="text-2xl font-bold tracking-tighter inline-flex flex-wrap items-center">
+              <img src="/assets/imagens/logo.webp" alt="Logo" className="h-16 w-16 mr-2" />
               RIGON <span className="text-[#F45F0A] relative inline-block mx-2">
                 MOTOR
                 <span className="absolute inset-0 bg-[#F45F0A]/20 blur-sm -z-10"></span>

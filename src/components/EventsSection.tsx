@@ -43,10 +43,13 @@ const EventCard: React.FC<Event> = ({ date, title, description, image, time }) =
         </div>
         <h3 className="text-xl font-bold mb-2 text-white group-hover:text-[#F45F0A] transition-colors">{title}</h3>
         <p className="text-gray-400 mb-4 text-sm">{description}</p>
-        <button className="group/btn flex items-center gap-1.5 text-[#F45F0A] hover:text-white transition-colors font-medium">
-          <span>Saiba mais</span>
-          <ArrowRight className="h-4 w-4 group-hover/btn:translate-x-1 transition-transform" />
-        </button>
+        <a 
+              href="https://www.instagram.com/rigonmotorbar/"
+              className="group/btn flex items-center gap-1.5 text-[#F45F0A] hover:text-white transition-colors font-medium"
+            >
+              <span>Saiba mais</span>
+              <ArrowRight className="h-4 w-4 group-hover/btn:translate-x-1 transition-transform" />
+            </a>
       </div>
     </motion.div>
   );
@@ -55,31 +58,31 @@ const EventCard: React.FC<Event> = ({ date, title, description, image, time }) =
 const EventsSection: React.FC = () => {
   const events: Event[] = [
     {
-      date: "Toda Terça",
-      title: "Noite do Rock",
-      description: "Bandas de rock ao vivo e promoções especiais em drinks para os amantes do bom e velho rock n' roll.",
-      image: "https://images.unsplash.com/photo-1563841930606-67e2bce48b78?q=80&w=2942&auto=format&fit=crop",
+      date: "Nossas Bebidas",
+      title: "Drinks exclusivos",
+      description: "Drinks exclusivos preparados com ingredientes selecionados",
+      image: "/assets/imagens/unnamed7.jpg",
       time: "19:00 - 00:00"
     },
     {
-      date: "Quintas e Sextas",
-      title: "Encontros de Motociclistas",
-      description: "O point dos motociclistas da região com descontos especiais e ambiente perfeito para trocar ideias.",
-      image: "https://images.unsplash.com/photo-1558981852-426c6c22a060?q=80&w=2940&auto=format&fit=crop",
+      date: "Eventos Musicais",
+      title: "Música ao vivo",
+      description: "Música ao vivo com os melhores artistas locais",
+      image: "/assets/imagens/unnamed2.jpg",
       time: "20:00 - 01:00"
     },
     {
-      date: "Sábados",
-      title: "DJ Night & Drinks Especiais",
-      description: "Os melhores DJs da cidade comandando as pickups com drinks promocionais até meia-noite.",
-      image: "https://images.unsplash.com/photo-1545128485-c400ce7b23d2?q=80&w=2940&auto=format&fit=crop",
+      date: "Gastronomia Premium",
+      title: "Alta Gastronomia",
+      description: "Pratos preparados com ingredientes de alta qualidade",
+      image: "/assets/imagens/unnamed1.jpg",
       time: "21:00 - 03:00"
     },
     {
-      date: "Domingos",
-      title: "Sertanejo ao vivo",
-      description: "Tarde e noite com o melhor do sertanejo universitário e tradicional para fechar o fim de semana.",
-      image: "https://images.unsplash.com/photo-1551696785-927d4ac2d35b?q=80&w=2940&auto=format&fit=crop",
+      date: "Encontro de Motociclistas",
+      title: "Point dos Motociclistas",
+      description: "O point preferido dos amantes de motos",
+      image: "/assets/imagens/unnamed5.jpg",
       time: "16:00 - 23:00"
     }
   ];
@@ -172,7 +175,7 @@ const EventsSection: React.FC = () => {
           className="text-center mt-16"
         >
           <motion.a 
-            href="#"
+            href="https://www.instagram.com/rigonmotorbar/"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             className="inline-block px-8 py-4 bg-[#F45F0A] hover:bg-[#d54d02] text-white font-bold rounded-xl transition-all duration-300 hover:shadow-[0_0_30px_rgba(244,95,10,0.3)]"

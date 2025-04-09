@@ -96,6 +96,9 @@ const HeroSection: React.FC = () => {
           transition={{ duration: 0.8, delay: 0.5, ease: "easeOut" }}
           className="space-y-8"
         >
+          <div className="flex justify-center">
+            <img src="/assets/imagens/logo.webp" alt="Logo" className="h-[120px] w-[120px]" />
+          </div>
           <motion.h1 
             className="text-7xl md:text-9xl font-bold mb-4 tracking-tighter"
             initial={{ opacity: 0, scale: 0.9 }}

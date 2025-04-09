@@ -83,8 +83,9 @@ const Navbar = () => {
       <div className="container mx-auto px-6 flex justify-between items-center">
         <Link 
           to="/"
-          className="text-white font-display text-2xl font-bold hover:text-[#F45F0A] transition-colors duration-300"
+          className="flex items-center text-white font-display text-2xl font-bold hover:text-[#F45F0A] transition-colors duration-300"
         >
+          <img src="/assets/imagens/logo.webp" alt="Logo" className="h-16 w-16 mr-2" />
           RIGON<span className="text-[#F45F0A]">MOTOR</span>BAR
         </Link>
 
