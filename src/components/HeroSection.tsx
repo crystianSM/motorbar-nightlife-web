@@ -80,14 +80,7 @@ const HeroSection: React.FC = () => {
       {/* Content container */}
       <div className="container mx-auto px-4 text-center text-white relative z-10 flex flex-col justify-between h-full py-24">
         {/* Enhanced top badge */}
-        <motion.div 
-          initial={{ opacity: 0, y: -50 }}
-          animate={{ opacity: isLoaded ? 1 : 0, y: isLoaded ? 0 : -50 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          className="inline-block mb-3 border border-[#F45F0A]/30 px-8 py-3 rounded-full backdrop-blur-sm mx-auto shadow-[0_0_15px_rgba(244,95,10,0.3)]"
-        >
-          <span className="text-[#F45F0A] font-medium tracking-[0.2em] text-sm">Rua São Pedro, 159 - Jd Menino Deus, Quatro Barras</span>
-        </motion.div>
+   
         
         {/* Enhanced main content */}
         <motion.div 
@@ -97,26 +90,9 @@ const HeroSection: React.FC = () => {
           className="space-y-8"
         >
           <div className="flex justify-center">
-            <img src="/assets/imagens/logo.webp" alt="Logo" className="h-[120px] w-[120px]" />
+            <img src="/assets/imagens/logo.png" alt="Logo" className="h-[300px] w-[300px]" />
           </div>
-          <motion.h1 
-            className="text-7xl md:text-9xl font-bold mb-4 tracking-tighter"
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.7, delay: 0.3 }}
-          >
-            RIGON <motion.span 
-              className="text-[#F45F0A] relative inline-block"
-              animate={{ 
-                textShadow: ["0 0 15px rgba(244,95,10,0.5)", "0 0 30px rgba(244,95,10,0.7)", "0 0 15px rgba(244,95,10,0.5)"] 
-              }}
-              transition={{ duration: 3, repeat: Infinity }}
-            >
-              MOTOR
-              <span className="absolute inset-0 bg-[#F45F0A]/20 blur-[50px] -z-10"></span>
-              <span className="absolute -inset-4 bg-[#F45F0A]/5 blur-3xl -z-20 animate-pulse"></span>
-            </motion.span> BAR
-          </motion.h1>
+         
           
           {/* Enhanced animated divider */}
           <motion.div 

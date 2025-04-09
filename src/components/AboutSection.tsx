@@ -168,23 +168,80 @@ const AboutSection: React.FC = () => {
           </motion.div>
 
           <motion.div 
-            className="relative group"
+            className="relative group max-w-sm mx-auto md:max-w-md"
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
             <div className="absolute -inset-4 bg-gradient-to-r from-[#F45F0A] to-[#d54d02] rounded-xl opacity-20 blur-xl transition-all duration-500 group-hover:opacity-40"></div>
-            <div className="relative rounded-xl overflow-hidden shadow-2xl aspect-[4/3]">
-              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent opacity-60 z-10 transition-opacity duration-300 group-hover:opacity-30"></div>
-              <motion.img 
-                src="/assets/imagens/car2.jpeg"
-                alt="Rigon Bar ambiente" 
-                className="w-full h-full object-cover"
-                whileHover={{ scale: 1.1 }}
-                transition={{ duration: 0.7 }}
-              />
-              <div className="absolute bottom-8 left-8 z-20">
+            <div className="relative rounded-xl overflow-hidden shadow-2xl aspect-[9/16]">
+              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent opacity-60 z-20 transition-opacity duration-300 group-hover:opacity-30"></div>
+              <div className="relative w-full h-full group/video">
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  viewport={{ once: false, margin: "-100px" }}
+                  onViewportEnter={() => {
+                    const video = document.getElementById('aboutVideo') as HTMLVideoElement;
+                    video.play().catch(() => {
+                      // Handle autoplay error if needed
+                    });
+                    video.muted = false;
+                  }}
+                  onViewportLeave={() => {
+                    const video = document.getElementById('aboutVideo') as HTMLVideoElement;
+                    video.pause();
+                  }}
+                  className="w-full h-full"
+                >
+                  <video
+                    loop
+                    playsInline
+                    muted
+                    className="w-full h-full object-cover"
+                    id="aboutVideo"
+                  >
+                    <source src="/assets/imagens/sobre.mp4" type="video/mp4" />
+                  </video>
+                </motion.div>
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div 
+                    className="flex gap-4 opacity-0 transition-opacity duration-300 ease-in-out"
+                    style={{ opacity: "var(--button-opacity, 0)" }}
+                  >
+                    <button
+                      onClick={() => {
+                        const video = document.getElementById('aboutVideo') as HTMLVideoElement;
+                        if (video.paused) {
+                          video.play();
+                        } else {
+                          video.pause();
+                        }
+                      }}
+                      className="bg-black/50 hover:bg-[#F45F0A]/80 p-4 rounded-full transition-all duration-300 backdrop-blur-sm hover:scale-110"
+                    >
+                      {/* Play button SVG */}
+                    </button>
+                    <button
+                      onClick={() => {
+                        const video = document.getElementById('aboutVideo') as HTMLVideoElement;
+                        video.muted = !video.muted;
+                      }}
+                      className="bg-black/50 hover:bg-[#F45F0A]/80 p-4 rounded-full transition-all duration-300 backdrop-blur-sm hover:scale-110"
+                    >
+                      {/* Mute button SVG */}
+                    </button>
+                  </div>
+                </div>
+                <style>{`
+                  .group\/video:hover div {
+                    --button-opacity: 1;
+                  }
+                `}</style>
+                {/* Removed motion.img component */}
+              </div>
+              <div className="absolute bottom-8 left-8 z-30">
                 <motion.div 
                   className="bg-[#F45F0A] py-3 px-8 rounded-lg shadow-xl"
                   animate={{ rotate: [-2, 1, -2] }}
